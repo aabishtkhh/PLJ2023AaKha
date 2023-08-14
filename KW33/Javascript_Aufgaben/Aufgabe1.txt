@@ -1,0 +1,2 @@
+Finde in der Datei people.json alle Personen, die "rob" im first_name haben. Gib von denen die IP-Adressen aus.
+

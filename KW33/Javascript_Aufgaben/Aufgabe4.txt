@@ -1,0 +1,4 @@
+1. Teilaufgabe: Gibt es jemanden mit dem last_name "Free"? (Ausgabe true/false)
+2. Teilaufgabe: Gibt es jemanden mit dem first_name "Gianluca"? (Ausgabe true/false)
+3. Teilaufgabe:Gibt es jemanden mit dem first_name "Buddy"? (Ausgabe true/false)
+
