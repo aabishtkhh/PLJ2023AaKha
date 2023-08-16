@@ -1,2 +1,0 @@
-1. Teilaufgabe: Sind alle firstnames kürzer als 20 Zeichen? (Ausgabe true/false)
-2. Teilaufgabe: Sind alle firstnames kürzer als 12 Zeichen? (Ausgabe true/false)

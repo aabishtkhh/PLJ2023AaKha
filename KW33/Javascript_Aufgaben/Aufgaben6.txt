@@ -1,9 +1,0 @@
-
-
-Erstelle ein HTML-Dokument mit einer unordered list von 20 Einträgen (früchte, Städte..etc)
-Allerdings müssen die <li> Einträge über ein Javascript erstellt werden. 
-Das Document selbst hat nur ein Header und ein Body .
-
-Im Anschluss muss jeder Eintrag mittels neuem Script eine zufällige Farbe gegeben werden.
-
-Im Anschluss muss diese Liste noch sortiert werden.
