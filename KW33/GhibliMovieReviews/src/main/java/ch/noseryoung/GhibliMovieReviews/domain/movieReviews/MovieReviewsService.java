@@ -1,5 +1,6 @@
 package ch.noseryoung.GhibliMovieReviews.domain.movieReviews;
 
+import ch.noseryoung.GhibliMovieReviews.domain.exceptions.MovieReviewExceptions;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,21 +15,43 @@ public class MovieReviewsService {
     private MovieReviewsRepository repository;
 
     public List<MovieReviews> getAllReviews(String filterName) {
-        return;
+        log.info("All reviews shown");
+        List<MovieReviews> reviews;
+        List<MovieReviews> filteredReviews = new ArrayList<>();
+        reviews = repository.findAll();
+        if (filterName != null){ //it checks if the reviews name is equal to the filteredName
+            for (MovieReviews review : reviews) {
+                if (review.getName().equals(filterName)){
+                    filteredReviews.add(review); //when matches it adds to the filteredDrinks
+                }
+            }
+            return filteredReviews;
+        }else {
+            return reviews;
+        }
     }
 
-    public MovieReviews getSingleReview(Integer id) {
-        return;
+    public MovieReviews getSingleReview(Integer id) throws MovieReviewExceptions {
+        log.info(id + " review found");
+        return repository.findById(id).orElseThrow(() -> new MovieReviewExceptions("ID "+ id +" not found"));
     }
 
-    public MovieReviews postADrink(MovieReviews drinks) {
-        return;
+    public MovieReviews postAReview(MovieReviews review) {
+        log.info(review.getMovieReviewId() + "\nreview created");
+        return repository.save(review);
     }
 
-    public MovieReviews putADrink(MovieReviews drink, Integer id) {
-        return;
+    public MovieReviews putAReview(MovieReviews review, Integer id) throws MovieReviewExceptions  {
+        log.info(id + " review updated");
+        if(repository.existsById(id)) {
+            review.setMovieReviewId(id);
+            return repository.save(review);
+        }
+        return repository.findById(id).orElseThrow(() -> new MovieReviewExceptions("ID "+ id +" not found"));
     }
 
-    public void deleteADrink(Integer id) {
+    public void deleteAReview(Integer id) {
+        log.info(id + " review deleted");
+        repository.deleteById(id);
     }
 }

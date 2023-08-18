@@ -6,11 +6,11 @@ import lombok.Data;
 
 @Entity
 @Data
-@Table(name = "restfood_users")
+@Table(name = "users")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="user_Id")
+    @Column(name="id_user")
     private Integer user_Id;
     @Column(name="name")
     private String userName;
@@ -19,9 +19,8 @@ public class User {
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinTable(
             name = "user_roles",
-            joinColumns = @JoinColumn (name = "user_Id", referencedColumnName = "user_Id"),
-            inverseJoinColumns = @JoinColumn
-                    (name = "id_role", referencedColumnName = "id_role")
+            joinColumns = @JoinColumn (name = "id_user", referencedColumnName = "id_user"),
+            inverseJoinColumns = @JoinColumn (name = "id_role", referencedColumnName = "id_role")
     )
     private Role userRoles;
 

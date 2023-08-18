@@ -12,12 +12,12 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 //or @Data
-@Table(name = "movie-reviews")
+@Table(name = "movie_reviews")
 public class MovieReviews {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "movieReviewId")
-    private Integer drinkID;
+    private Integer movieReviewId;
     @Column(name = "name")
     private String name;
     @Column(name = "rating")
@@ -28,4 +28,10 @@ public class MovieReviews {
     private Double lengthOfMovie;
     @Column(name = "image_url")
     private String image_url;
+    @Column(name = "ghibli")
+    private Boolean isItGhibli;
+    @Column(name = "disney")
+    private Boolean disney;
+    @Column(name = "personal_opinion")
+    private String personalOpinion;
 }
