@@ -17,14 +17,12 @@ VALUES
 
 -- users
 INSERT INTO users(id_user, name, password)
-VALUES (1, 'admin', '1234'),
-       (2, 'user', '1234')
+VALUES (1, 'admin', '$2a$10$GKSix3ohTsUv4FKZX983keiT/XKzlyKkIZirktGRsXCuYdgqgmHAi') /*encoded password fpr 1234*/
     ON CONFLICT DO NOTHING;
 
 -- roles
 INSERT INTO roles(id_role, name)
-VALUES (1, 'ADMIN'),
-       (2, 'USER')
+VALUES (1, 'ADMIN')
     ON CONFLICT DO NOTHING;
 
 -- authorities
@@ -37,8 +35,7 @@ VALUES (1, 'GET'),
 
 -- assign roles to users
 INSERT INTO user_roles(id_user, id_role)
-VALUES (1, 1),
-       (2, 2)
+VALUES (1, 1)
     ON CONFLICT DO NOTHING;
 
 -- assign authorities to roles
@@ -46,7 +43,6 @@ INSERT INTO roles_authorities(id_role, id_auth)
 VALUES (1, 1),
        (1, 2),
        (1, 3),
-       (1, 4),
+       (1, 4)
 
-       (2, 1) -- user can only use "get"
     ON CONFLICT DO NOTHING;

@@ -25,7 +25,7 @@ public class MovieReviews {
     @Column(name = "description")
     private String description;
     @Column(name = "length")
-    private Double lengthOfMovie;
+    private Integer lengthOfMovie;
     @Column(name = "image_url")
     private String image_url;
     @Column(name = "ghibli")
