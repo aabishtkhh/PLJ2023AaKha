@@ -27,6 +27,9 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-security' //security
 	implementation("org.springdoc:springdoc-openapi-ui:1.7.0") //swagger
+	implementation group: 'io.jsonwebtoken', name: 'jjwt-api', version: 'latest.release'
+	implementation group: 'io.jsonwebtoken', name: 'jjwt-jackson', version: 'latest.release'
+	runtimeOnly 'io.jsonwebtoken:jjwt-impl:latest.release'
 	compileOnly 'org.projectlombok:lombok'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	runtimeOnly 'org.postgresql:postgresql'
