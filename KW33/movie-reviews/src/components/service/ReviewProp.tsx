@@ -1,25 +1,25 @@
-
-
-export type Prop = { /*we can also export this object seperately*/
-    id?: number;
+export type ReviewProp = { /*we can also export this object seperately*/
+    movieReviewId : number;
     name: string;    
     rating : number; 
     description : string;
-    length : number;
+    lengthOfMovie : number;
     image_url : string;
     ghibli : boolean;
     disney : boolean;
-    personalOpinion : string
+    personalOpinion : string;
 }
+/* exactly like the ReviewProp, but the movieReviewId is different/ is not within the type*/
+export type ReviewPropCreate = Omit < ReviewProp, "movieReviewId" >;
 
-export function ReviewProp(props: Prop) {
+function ReviewProp(props: ReviewProp) {
     return (
         <>
-        <div>{props.id}</div>
+        <div>{props.movieReviewId}</div>
         <div>{props.name}</div>
         <div>{props.rating}</div>
         <div>{props.description}</div>
-        <div>{props.length}</div>
+        <div>{props.lengthOfMovie}</div>
         <div>{props.image_url}</div>
         <div>{props.ghibli}</div>
         <div>{props.disney}</div>
