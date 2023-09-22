@@ -1,9 +1,9 @@
-import { useState } from "react";
-import { IconButton, InputBase, Paper } from "@mui/material";
 import SearchIcon from '@mui/icons-material/Search';
+import { IconButton, InputBase, Paper } from "@mui/material";
+import { useState } from "react";
 
 function SearchBar() {
-  const [inputText, setInputText] = useState("");
+  const [, setInputText] = useState("");
 
   const inputHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     const lowerCase = e.target.value.toLowerCase();

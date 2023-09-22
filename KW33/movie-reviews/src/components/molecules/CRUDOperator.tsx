@@ -1,7 +1,7 @@
 import Paper from "@mui/material/Paper";
 import DeleteButton from "../atoms/adminButtons/DeleteButton";
 import { ReviewProp } from "../service/ReviewProp";
-import { Box, Grid } from "@mui/material";
+import { Box } from "@mui/material";
 import { Link } from "react-router-dom";
 import PostButton from "../atoms/adminButtons/PostButton";
 import PutButton from "../atoms/adminButtons/PutButton";

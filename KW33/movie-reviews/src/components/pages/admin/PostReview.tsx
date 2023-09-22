@@ -62,7 +62,7 @@ const PostAuthor = () => {
                     return errors;
                 }}
 
-                onSubmit={(values, { setSubmitting }) => {
+                onSubmit={(values) => {
                     console.log(values)
 
                     ReviewService.postReview(values).then(response => (navigate(`/reviews/admin/${response.id}`, { replace: true }))).catch();

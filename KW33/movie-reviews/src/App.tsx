@@ -14,7 +14,6 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="*" element={<NotFound />} />
         <Route path="/reviews" element={<HomePage />} />
         <Route path="/reviews/:id" element={<GetByID />} />
         <Route path="/reviews/sign-in" element={<Registration />} />
@@ -23,6 +22,7 @@ function App() {
         <Route path="/reviews/admin" element={<AdminPage />} />
         <Route path="/reviews/admin/create-review" element={<PostReview/>} />
         <Route path="/reviews/admin/update-review/:id" element={<PutReview />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </>
   )

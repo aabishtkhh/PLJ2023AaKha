@@ -81,7 +81,7 @@ const PutReview = () => {
                         return errors;
                     }}
 
-                    onSubmit={(values, { setSubmitting }) => {
+                    onSubmit={(values) => {
                         console.log(values);
                         if (!review.movieReviewId) {
                             return;
