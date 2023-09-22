@@ -1,0 +1,29 @@
+version: "3.8"
+
+services:
+  frontend:
+    restart: unless-stopped
+    container_name: frontend
+    image: moviereviews
+    ports:
+      - 8900:80
+    depends_on: 
+      - backend
+  backend:
+    restart: unless-stopped
+    image: moviereviews_backend_image
+    container_name: backend
+    ports:
+      - 2800:80
+    depends_on:
+      - db
+  db:
+    restart: unless-stopped
+    image: moviereviews_db_image
+    container_name: db
+    ports:
+      - 3800:5432
+    environment:
+      POSTGRES_PASSWORD: '1234' #encoded: $2a$10$GKSix3ohTsUv4FKZX983keiT/XKzlyKkIZirktGRsXCuYdgqgmHAi
+      POSTGRES_USER: 'admin'
+      POSTGRES_DB: 'postgres'
