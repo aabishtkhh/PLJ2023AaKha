@@ -2,6 +2,7 @@ plugins {
 	id 'java'
 	id 'org.springframework.boot' version '3.1.2'
 	id 'io.spring.dependency-management' version '1.1.2'
+	id "org.sonarqube" version "4.3.1.3277" // sonar
 }
 
 group = 'ch.noseryoung'
@@ -9,6 +10,17 @@ version = '0.0.1-SNAPSHOT'
 
 java {
 	sourceCompatibility = '17'
+}
+
+// sonar
+sonar {
+	properties {
+		property "sonar.projectKey", "nypag-1_uk-223"
+		property "sonar.organization", "nypag-1"
+		property "sonar.token","92d1ecda325d3ff2db32d35611091f1ce7ba79b9"
+		property "sonar.host.url", "https://sonarcloud.io"
+		property "sonar.qualitygate.wait", true
+	}
 }
 
 configurations {
